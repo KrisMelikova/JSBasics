@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function mathOperation(arg1, arg2, operation){
+        switch (operation) {
+            case "сложить":
+                alert(arg1 + arg2);
+                break;
+            case "вычесть":
+                alert(arg1 - arg2);
+                break;
+            case "умножить":
+                alert(arg1 * arg2);
+                break;
+            case "разделить":
+                alert(arg1 / arg2);
+                break;
+            default:
+                alert("Что-то пошло не так, давайте повторим! Следуйте инструкциям.");
+        }
+    }
+
+    a = prompt("Введите первое число");
+    b = prompt("Введите второе число");
+    c = prompt("Сложить, вычесть, умножить или разделить? (напишите нужное слово)")
+
+    mathOperation(a, b, c)
+
+</script>
+</body>
+</html>
