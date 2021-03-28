@@ -6,30 +6,47 @@
 </head>
 <body>
 <script>
-    function mathOperation(arg1, arg2, operation){
+
+    function calc1(a, b){
+        c = a + b;
+        return c;
+    }
+
+    function calc2(a, b){
+        c = a - b;
+        return c;
+    }
+
+    function calc3(a, b){
+        c = a * b;
+        return c;
+    }
+
+    function calc4(a, b){
+        c = a / b;
+        return c;
+    }
+
+    function mathOperation(arg1, arg2, operation) {
         switch (operation) {
             case "сложить":
-                alert(arg1 + arg2);
-                break;
+                return calc1(arg1, arg2);
             case "вычесть":
-                alert(arg1 - arg2);
-                break;
+                return calc2(arg1, arg2);
             case "умножить":
-                alert(arg1 * arg2);
-                break;
+                return calc3(arg1, arg2);
             case "разделить":
-                alert(arg1 / arg2);
-                break;
-            default:
-                alert("Что-то пошло не так, давайте повторим! Следуйте инструкциям.");
+                return calc4(arg1, arg2);
         }
     }
 
-    a = prompt("Введите первое число");
-    b = prompt("Введите второе число");
-    c = prompt("Сложить, вычесть, умножить или разделить? (напишите нужное слово)")
+    firstnum = +prompt("Введите первое число");
+    secnum = +prompt("Введите второе число");
+    word = prompt("Сложить, вычесть, умножить или разделить? (напишите нужное слово)");
 
-    mathOperation(a, b, c)
+    m = mathOperation(firstnum, secnum, word);
+    alert(m);
+
 
 </script>
 </body>
