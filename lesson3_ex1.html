@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+let a = 0;
+let i = 2;
+let arr = [];
+let newarr = [];
+
+
+while (a < 101){ // создаю массив чисел от 0 до 100
+    arr.push(a);
+    a++;
+}
+
+
+arr[1] = 0; // заменяю 1 на 0 для удобства
+
+
+while (i <= 100) { // убираю составные числа
+    if (arr[i] !== 0) {
+        let n = i * 2;
+        while (n <= 100) {
+            arr[n] = 0;
+            n = n + i;
+        }
+    }
+    i+=1;
+
+    newarr = []; // создаю новый массив, куда попадут все простые числа
+    for (let p in arr) {
+        if (arr[p] !== 0) {
+            newarr.push(p);
+        }
+    }
+}
+
+alert(newarr);
+
+</script>
+</body>
+</html>
