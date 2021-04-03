@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+basket = [['The Great Gatsby', 200, 1], ['Pride and Prejudice', 250, 2], ['Anna Karenina', 300, 5], ['The Road', 100, 2],
+['Paradise Lost ', 100, 1], ['The Master and Margarita ', 350, 3]];
+
+function countBasketPrice(array){
+    let n = 0;
+    let just_cost = [];
+
+    while (n < array.length){
+        let m = array[n][1] * array[n][2];
+        just_cost.push(m);
+        n = n + 1;
+    }
+    
+    let sum_basket = just_cost.reduce((sum, current) => sum + current);
+    return(sum_basket);
+}
+
+let total = countBasketPrice(basket);
+alert('Итого стоимость: ' + total);
+
+</script>
+</body>
+</html>
