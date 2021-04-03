@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function numToObj(num) {
+        let numObj = {};
+
+        if (num.length > 3) {
+            console.log("Вы ввели число больше 999");
+            return numObj;
+        }
+        numObj.units = num % 10;
+        numObj.dozens = Math.floor((num % 100) / 10);
+        numObj.hundreds = Math.floor(num / 100);
+
+        return numObj;
+    }
+
+    usernum = prompt('Введите число от 0 до 999');
+
+    console.log(numToObj(usernum));
+
+</script>
+</body>
+</html>
