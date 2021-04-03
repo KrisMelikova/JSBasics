@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    alert( null > 0 );  //  false - ни к левой части выражения, null, ни к правой части, 0, никаких преобразований не применяется
+    alert( null == 0 ); //  false - здесь false возвращается как значение по умолчанию (согласно алгоритму сравнения)
+    alert( null >= 0 ); //  true - оператор Greater-than-or-equal ( >=) выполняет принуждение типа ( ToPrimitive ) с подсказкой типа Number
+
+</script>
+</body>
+</html>

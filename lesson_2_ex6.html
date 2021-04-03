@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function calc1(a, b){
+        c = a + b;
+        return c;
+    }
+
+    function calc2(a, b){
+        c = a - b;
+        return c;
+    }
+
+    function calc3(a, b){
+        c = a * b;
+        return c;
+    }
+
+    function calc4(a, b){
+        c = a / b;
+        return c;
+    }
+
+    function mathOperation(arg1, arg2, operation) {
+        switch (operation) {
+            case "сложить":
+                return calc1(arg1, arg2);
+            case "вычесть":
+                return calc2(arg1, arg2);
+            case "умножить":
+                return calc3(arg1, arg2);
+            case "разделить":
+                return calc4(arg1, arg2);
+        }
+    }
+
+    firstnum = +prompt("Введите первое число");
+    secnum = +prompt("Введите второе число");
+    word = prompt("Сложить, вычесть, умножить или разделить? (напишите нужное слово)");
+
+    m = mathOperation(firstnum, secnum, word);
+    alert(m);
+
+
+</script>
+</body>
+</html>
