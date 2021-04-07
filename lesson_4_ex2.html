@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const basket = {
+        info : [
+            item1 = {
+                name : 'The Great Gatsby',
+                price : 200,
+                count : 1,
+            },
+            item2 = {
+                name: 'Anna Karenina',
+                price: 400,
+                count: 2,
+            },
+        ],
+        countBasket () {
+            return this.info.reduce((total, bookItem) => total + bookItem.price * bookItem.count, 0);
+        },
+    };
+
+a = basket.countBasket();
+console.log(a);
+
+</script>
+</body>
+</html>
