@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let generateNumbers = [];
+    let attemptsCount = 0;
+
+    function resetGame() {
+        generateNumbers = [];
+
+        while (generateNumbers.length < 4) {
+            const part = Math.floor(Math.random() * 10);
+            if (!generateNumbers.includes(part)) generateNumbers.push(part);
+        }
+        console.log(generateNumbers);
+    }
+
+    function startGame() {
+        while (true) {
+            const guess = prompt('Угадайте 4 разных целых положительных числа, загаданных компьютером. Введите -1 чтобы выйти');
+
+            if (guess === '-1') return alert('Game Over');
+
+            if (!isValidGuess(guess)) continue;
+
+            attemptsCount++;
+
+            const result = getGuessResult(guess);
+
+            if (result[0] !== 4) {
+                alert('Быки: ' + result[0] + 'Коровы: ' + result[1]);
+                continue;
+            }
+            alert('Поздравляем! Вы угадали все цифры. Количество попыток: ' + attemptsCount + '.');
+
+            if (!confirm('Хотите сыграть еще раз?')) return alert('Game Over');
+
+            resetGame();
+        }
+    }
+
+    function isValidGuess(guess) {
+        if (guess.length !== 4) return false;
+
+        for (let i = 0; i < guess.length; i++) {
+            if (isNaN(parseInt(guess[i]))) return false;
+            }
+        return true;
+        }
+
+    function getGuessResult(guess) {
+        const result = [0,0];
+
+        for (let i = 0; i < guess.length; i++) {
+            if (+guess[i] === generateNumbers[i]) {
+                result[0]++;
+            }else if (generateNumbers.includes(+guess[i])){
+                result[i]++;
+            }
+
+        }
+        return result;
+    }
+
+    resetGame();
+    startGame();
+
+</script>
+</body>
+</html>
